@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Eletrolist</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>Eletrolist</h1>
+							<p class="major"> Os pontos de carregamento de carros elétricos em um só lugar</p>
+							<ul class="actions stacked">
+								<li><a href="#first" class="button big wide smooth-scroll-middle">Encontre o ponto mais próximo</a></li>
+							</ul>
+						</div>
+						<div class = "image"><div id = "map" style= 'width: 100%; height: 100%'></div>
+							<script>
+
+									var map = L.map("map").setView([-22.912389,-43.217640],13);
+										L.tileLayer('https://api.maptiler.com/maps/openstreetmap/{z}/{x}/{y}.jpg?key=pwJrxwqnViPtxMfGLSp2',{
+										attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+									}).addTo(map);
+
+									var iconePersonalizado = L.Icon.extend ({
+										options:{
+										iconSize: [50,50],
+										iconAnchor: [20,25],
+										shadowAnchor: [4,62]
+									}
+									})
+
+									var recarga = new iconePersonalizado({iconUrl: 'energia-eletrica.png'});
+									
+
+									var marker = L.marker([-22.947548, -43.183450],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.956114, -43.191604],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.960465,-43.206211],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.913493,-43.167689],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.906007,-43.174588],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.910988,-43.204757],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.905634,-43.225810],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.911188,-43.236120],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.921992,-43.235227],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.860304,-43.229061],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.810498,-43.247514],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.762797,-43.465058],{icon: recarga}).addTo(map);
+                                    var marker = L.marker([-22.901595,-43.282096],{icon: recarga}).addTo(map);
+
+
+
+									L.control.scale({
+										metric: true,
+										imperial: false,
+										position: 'bottomleft'
+									}).addTo(map);
+
+                                    L.Control.geocoder().addTo(map);
+
+                                    var lc = L.control.locate({position: "topright",icon: 'leaflet-control-locate-location-arrow'}).addTo(map);
+
+
+							</script>
+
+				
+						</div>
+						
+					</section>
+
+				<!-- Five -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Por que escolher a <b>Eletrolist</b>? </h2>
+							<p>Encontre onde recarregar seu veículo em alguns segundos. Planeje suas viagens com mais segurança e sem medo de ficar parado na estrada.</p>
+						</div>
+
+
+				<!-- Footer -->
+					<footer class="wrapper style1 align-center">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<p>&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
